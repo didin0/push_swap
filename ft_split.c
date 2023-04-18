@@ -6,7 +6,7 @@
 /*   By: mabbadi <mabbadi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 21:00:24 by mabbadi           #+#    #+#             */
-/*   Updated: 2023/04/14 17:34:53 by mabbadi          ###   ########.fr       */
+/*   Updated: 2023/04/18 19:10:58 by mabbadi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	split_words(char **result, char const *s, char c, int word)
 			result[word] = ft_calloc(sizeof(char), (end_i - start_i + 2));
 			if (!result[word])
 			{
-				while (word++)
+				while (word--)
 					free(result[word]);
 				return (0);
 			}
@@ -67,8 +67,13 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	result = ft_calloc(sizeof(char *), (numwords(s, c) + 1));
 	if (!result)
+	{
 		return (NULL);
+	}
 	if (!split_words(result, s, c, 0))
+	{
+		free(result);
 		return (NULL);
+	}
 	return (result);
 }
