@@ -6,7 +6,7 @@
 /*   By: mabbadi <mabbadi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 21:00:24 by mabbadi           #+#    #+#             */
-/*   Updated: 2023/04/18 19:10:58 by mabbadi          ###   ########.fr       */
+/*   Updated: 2023/04/20 15:16:48 by mabbadi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	numwords(char const *s, char c)
 	return (word_num);
 }
 
-// Split *s en sous chaine et stock dans result
+// Split *s en sous chaine et return 1 or 0
 static int	split_words(char **result, char const *s, char c, int word)
 {
 	int		start_i;

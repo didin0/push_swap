@@ -6,7 +6,7 @@
 /*   By: mabbadi <mabbadi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 14:21:43 by mabbadi           #+#    #+#             */
-/*   Updated: 2023/04/15 17:06:12 by mabbadi          ###   ########.fr       */
+/*   Updated: 2023/04/20 14:55:14 by mabbadi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (!dst || !src)
+	if (!dst && !src)
 		return (NULL);
 	while (i < n)
 	{
