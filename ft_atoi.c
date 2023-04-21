@@ -6,7 +6,7 @@
 /*   By: mabbadi <mabbadi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 19:10:31 by mabbadi           #+#    #+#             */
-/*   Updated: 2023/04/18 18:57:00 by mabbadi          ###   ########.fr       */
+/*   Updated: 2023/04/21 16:35:49 by mabbadi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int	ft_atoi(const char *str)
 {
 	long	sum;
 	int		sign;
+	int		i;
 
+	i = 0;
 	sum = 0;
 	sign = 1;
 	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
@@ -37,3 +39,4 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * sum);
 }
+

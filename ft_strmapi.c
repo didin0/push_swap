@@ -6,7 +6,7 @@
 /*   By: mabbadi <mabbadi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 17:22:23 by mabbadi           #+#    #+#             */
-/*   Updated: 2023/04/11 18:17:56 by mabbadi          ###   ########.fr       */
+/*   Updated: 2023/04/21 14:48:43 by mabbadi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*str;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	i = 0;
 	str = (char *)ft_calloc(sizeof(char), (ft_strlen(s)) + 1);
