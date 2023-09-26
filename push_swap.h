@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabbadi <mabbadi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/06 13:22:06 by mabbadi           #+#    #+#             */
-/*   Updated: 2023/04/20 15:17:07 by mabbadi          ###   ########.fr       */
+/*   Created: 2023/09/14 16:10:36 by mabbadi           #+#    #+#             */
+/*   Updated: 2023/09/25 15:43:26 by mabbadi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PUSH_SWAP_H
+#define PUSH_SWAP_H
 
-char	*ft_strchr(const char *s, int c)
-{
-	char	*str;
+#include "Libft/libft.h"
 
-	str = (char *)s;
-	while (*str != (char)c)
-	{
-		if (*str == '\0')
-			return (NULL);
-		str++;
-	}
-	return (str);
-}
+#endif
