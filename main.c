@@ -6,7 +6,7 @@
 /*   By: mabbadi <mabbadi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 12:13:37 by mabbadi           #+#    #+#             */
-/*   Updated: 2023/09/26 16:49:50 by mabbadi          ###   ########.fr       */
+/*   Updated: 2023/09/27 17:33:45 by mabbadi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,20 @@ void print(void *content)
 	printf("%s | ", (char *)content);
 }
 
+// int	checkargv(int ac, char *av)
+// {
+// 	int i = 1;
+// 	int j = 1;
+
+// 	while (i < ac)
+// 	{
+// 		if (ft_strchr(av[i], ))
+// 			return 1;
+// 		i++;
+// 	}
+// 	return 0;
+// }
+
 int	main(int argc, char **argv)
 {
 	int i = 1;
@@ -36,10 +50,14 @@ int	main(int argc, char **argv)
 
 	if (argc > 2)
 	{
-		lst = ft_lstnew(argv[i]);
+		lst = ft_lstnew(ft_atoi(argv[i]));
+		i++;
+		while (argv[i])
+		{
+				ft_lstadd_back(&lst, ft_lstnew(argv[i]));
+			i++;
+		}
 	}
-ft_lstadd_front(&lst, ft_lstnew(argv[2]));
-ft_lstadd_front(&lst, ft_lstnew(argv[3]));
 	ft_lstiter(lst, print);
 	return (0);
 }
