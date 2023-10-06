@@ -6,29 +6,32 @@
 /*   By: mabbadi <mabbadi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:42:11 by mabbadi           #+#    #+#             */
-/*   Updated: 2023/10/06 14:52:00 by mabbadi          ###   ########.fr       */
+/*   Updated: 2023/10/06 17:34:09 by mabbadi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_valid_argument(const char *arg)
+int is_valid_argument(char *arg)
 {
+	char *tmp = arg;
     if (*arg == '\0')
         return 0;  // Chaîne vide
 
     // Vérifier chaque caractère de l'argument
     while (*arg != '\0') {
+				if (*arg == '-' || *arg == '+')
+					arg++;
         if (*arg < '0' || *arg > '9')
             return 0;  // Le caractère n'est pas un chiffre
         arg++;
     }
 
     // Convertir l'argument en entier
-    long long int value = ft_atoll(arg);
+    long long value = ft_atoll(tmp);
 
     // Vérifier si la conversion a échoué ou si la valeur dépasse INT_MAX
-    if (value > INT_MAX)
+    if (value > INT_MAX || value < INT_MIN)
         return 0;  // La valeur dépasse INT_MAX
 
     return 1;  // L'argument est valide

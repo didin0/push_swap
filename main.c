@@ -6,7 +6,7 @@
 /*   By: mabbadi <mabbadi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 12:13:37 by mabbadi           #+#    #+#             */
-/*   Updated: 2023/10/06 14:51:48 by mabbadi          ###   ########.fr       */
+/*   Updated: 2023/10/06 17:30:57 by mabbadi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ int	main(int argc, char **argv)
 
 	if (argc >= 2)
 	{
-		lst = ft_lstnew((void *)(intptr_t)ft_atoi(argv[i]));
+		if (is_valid_argument(argv[i]))
+			lst = ft_lstnew((void *)(intptr_t)ft_atoi(argv[i]));
+		else
+			printf("argv : %s n'est pas valide.\n", argv[i]);
 		i++;
 		while (argv[i])
 		{
